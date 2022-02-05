@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://:p0929ba1750d2ea393e5e45cc252970c2b21ba695ceb17a4cb4217724eeaf4dee@ec2-52-17-52-124.eu-west-1.compute.amazonaws.com:19050
+  url: redis://:p0929ba1750d2ea393e5e45cc252970c2b21ba695ceb17a4cb4217724eeaf4dee@ec2-52-17-52-124.eu-west-1.compute.amazonaws.com:19049
   channel_prefix: instatalk_production
