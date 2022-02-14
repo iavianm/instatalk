@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20220205180906) do
     t.string "nickname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "online", default: false
+    t.boolean "online", default: false, null: false
   end
 
 end

@@ -1,3 +1,11 @@
-<ul class="users-list mt-4 list-unstyled text-success" id="online">
-  <% @users %>
-</ul>
+<div class="col-md-6">
+  <ul class="mt-4 list-unstyled">
+    <ul class="list-unstyled" id="online">
+      <% @users_online.each do |u| %>
+        <li>
+          <%= "#{u.nickname}" %>
+        </li>
+      <% end %>
+    </ul>
+  </ul>
+</div>

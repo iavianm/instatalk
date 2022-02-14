@@ -1,23 +1,17 @@
 class OnlineChannel < ApplicationCable::Channel
   def subscribed
-    logger.info "Subscribed to OnlineChannel"
+    logger.info 'Subscribed to OnlineChannel'
 
-    stream_from "online_channel"
+    stream_from 'online_channel'
 
     current_user.update!(online: true)
-    broadcast_users
+    OnlineService.new(current_user).make_online
   end
 
   def unsubscribed
-    logger.info "Unsubscribed to OnlineChannel"
+    logger.info 'Unsubscribed to OnlineChannel'
 
     current_user.update!(online: false)
-    broadcast_users
-  end
-
-  private
-
-  def broadcast_users
-    ActionCable.server.broadcast "online_channel", users: User.online.pluck(:nickname)
+    OnlineService.new(current_user).make_offline
   end
 end
