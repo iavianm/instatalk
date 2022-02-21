@@ -1,11 +1,1 @@
-<div class="col-md-6">
-  <ul class="mt-4 list-unstyled">
-    <ul class="list-unstyled" id="online">
-      <% @users_online.each do |u| %>
-        <li>
-          <%= "#{u.nickname}" %>
-        </li>
-      <% end %>
-    </ul>
-  </ul>
-</div>
+<%= tag.li online.nickname, data: { id: online.id } %>
