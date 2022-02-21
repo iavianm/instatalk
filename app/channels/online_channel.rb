@@ -4,14 +4,12 @@ class OnlineChannel < ApplicationCable::Channel
 
     stream_from 'online_channel'
 
-    current_user.update!(online: true)
     OnlineService.new(current_user).make_online
   end
 
   def unsubscribed
     logger.info 'Unsubscribed to OnlineChannel'
 
-    current_user.update!(online: false)
     OnlineService.new(current_user).make_offline
   end
 end
