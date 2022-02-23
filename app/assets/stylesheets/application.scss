@@ -1,2 +1,15 @@
 @import 'bootstrap';
 @import 'messages';
+
+.online {
+  border-left: 1px solid #e0e0e0 ;
+  ul {
+    list-style: none;
+    li::before {
+      content: "•";
+      color: #00C851;
+      font-size: 20px;
+      padding-right: 3px;
+    }
+  }
+}

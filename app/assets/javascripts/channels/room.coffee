@@ -6,9 +6,10 @@ jQuery(document).on 'turbolinks:load', ->
 
   $(document).on 'keypress', '#message_body', (event) ->
     message = event.target.value
-    if event.keyCode is 13 && message != ''
-      App.room.speak(message)
-      event.target.value = ""
+    if event.keyCode is 13
+      if message != ''
+        App.room.speak(message)
+        event.target.value = ""
       event.preventDefault()
 
 createRoomChannel = (roomId) ->
